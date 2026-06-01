@@ -8,7 +8,15 @@ body {
     padding: 20px;
     background: #f8fafc;
     font-family: "Poppins", sans-serif;
+<<<<<<< HEAD
     overflow-x: hidden;
+=======
+    
+}
+
+Main {
+    overflow: hidden;
+>>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 }
 
 /* Header & Navbar */
@@ -331,10 +339,14 @@ header {
 
 .bg-text-features {
     position: absolute;
+<<<<<<< HEAD
     left: 10%;
     font-size: 14vw;
+=======
+    font-size: 10vw;
+>>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
     font-weight: 900;
-    color: rgba(15, 23, 42, 0.04);
+    color: rgba(127, 131, 139, 0.398);
     letter-spacing: 2vw;
     white-space: nowrap;
     pointer-events: none;
@@ -350,28 +362,38 @@ header {
     width: 100%;
     max-width: 1200px;
     height: 600px;
+<<<<<<< HEAD
+=======
+    gap: 40px;
+    
+>>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 }
 
 .features-col {
     display: flex;
     flex-direction: column;
-    width: 28%;
+    justify-content: space-between;
+    width: 20%;
     height: 100%;
     position: relative;
     z-index: 1;
 }
 .col-left {
-    justify-content: flex-start;
-    gap: 40px;
+    z-index: 0;
+    gap: 80px;
 }
 .col-mid {
-    width: 38%;
+    width: 34%;
     justify-content: center;
+<<<<<<< HEAD
     z-index: 3
+=======
+    z-index: 2;
+>>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 }
 .col-right {
-    justify-content: flex-end;
-    gap: 40px;
+    z-index: 0;
+    gap: 80px;
 }
 
 .features-card {
@@ -458,10 +480,18 @@ header {
 }
 .promo-card-content {
     position: absolute;
-    bottom: 50px;
+    bottom: 90px;
     left: 50px;
     z-index: 2;
 }
+<<<<<<< HEAD
+=======
+
+.c-1{
+    top: 90px;
+}
+
+>>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 .promo-card-content h3 {
     color: #ffffff;
     font-size: 36px;
@@ -469,6 +499,7 @@ header {
     line-height: 1.1;
     letter-spacing: -0.5px;
     opacity: 0.9;
+    text-transform: uppercase;
 }
 
 /* ==========================================================================
