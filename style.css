@@ -1,17 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     padding: 20px;
     background: #f8fafc;
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
-/* Le Header Principal */
-
-header{
+/* Header & Navbar */
+header {
     margin: 0;
     padding: 0;
 }
@@ -22,7 +23,6 @@ header{
     height: 60px;
 }
 
-/* Les ailes gauche et droite (fond bleu clair) */
 .nav-section {
     background-color: #cedde2;
     height: 60px;
@@ -30,15 +30,13 @@ header{
     align-items: center;
     padding: 0 30px;
     flex: 1;
-
 }
-/* Modifier les ailes gauche et droite */
+
 .nav-left {
     border-top-left-radius: 20px;
     justify-content: flex-start;
     gap: 20px;
- /* Incline le bloc */
-    border-top-right-radius: 15px; /* Arrondit le coin supérieur */
+    border-top-right-radius: 15px;
     transform-origin: bottom left;
 }
 
@@ -46,22 +44,42 @@ header{
     border-top-right-radius: 20px;
     justify-content: flex-end;
     gap: 20px;
-
 }
-/* Liens de navigation */
+
+/* Liens avec effet Hover Premium */
 .nav-section a {
     text-decoration: none;
     color: #1e293b;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-/* Ajuste aussi la marge de ton logo pour caler le tout proprement */
+.nav-section a:hover {
+    color: #000000;
+}
+
+.nav-section a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+.nav-section a:hover::after {
+    width: 100%;
+}
+
 .nav-logo {
     background-color: #f8fafc;
     height: 65px;
-    width: 500px; /* Garde tes 500px */
+    width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +95,6 @@ header{
     color: #0f172a;
 }
 
-/* Bouton Connexion */
 .btn-sign {
     background-color: #000;
     color: #fff;
@@ -86,9 +103,12 @@ header{
     border-radius: 20px;
     font-size: 11px;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-sign:hover {
+    transform: scale(1.05);
 }
 
-/* Icône Profil/Panier */
 .icon-cart {
     background-color: #000;
     color: #fff;
@@ -99,18 +119,19 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.icon-cart:hover {
+    transform: scale(1.1);
 }
 
-/* Hero */
-
-
-
-/* Section Principale Hero */
+/* Hero Section */
 #hero {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #cedde2 0%, #f8fafc 100%); /* Dégradé de ton image */
+    background: linear-gradient(to bottom, #cedde2 0%, #f8fafc 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,13 +143,13 @@ header{
     border-bottom-left-radius: 20px;
 }
 
-/* 1. Titre et Boutons */
 .hero-content {
+    z-index: 3;
     text-align: center;
-    z-index: 3; /* Passe au-dessus de l'image si besoin */
 }
 
 .hero-content h2 {
+    font-family: "Syne", sans-serif;
     font-size: 54px;
     font-weight: 800;
     letter-spacing: -1px;
@@ -142,12 +163,11 @@ header{
     justify-content: center;
     gap: 15px;
 }
-
 .hero-buttons button {
     padding: 14px 28px;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 50px; /* Style pilule */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -157,35 +177,39 @@ header{
     color: #ffffff;
     border: none;
 }
-
 .btn-shop:hover {
     background-color: #222222;
+    transform: translateY(-2px);
 }
-
 .btn-explore {
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #e2e8f0;
 }
-
 .btn-explore:hover {
     background-color: #f8fafc;
+    transform: translateY(-2px);
 }
 
-/* 2. Image Centrale */
-.hero-main-img {
-    margin: 0;
-    padding: 0;
+.hero-img-container {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 75%; /* Ajuste la taille selon ton image */
-    object-fit: contain;
+    height: 75%;
+    width: 100%;
+    max-width: 500px;
     z-index: 1;
+    overflow: hidden;
+}
+.hero-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    will-change: transform, opacity;
 }
 
-/* 3. Bas Gauche : Avatars & Texte */
 .hero-bottom-left {
     position: absolute;
     bottom: 40px;
@@ -193,28 +217,25 @@ header{
     max-width: 260px;
     z-index: 2;
 }
-
 .avatar-group {
     display: flex;
     margin-bottom: 15px;
 }
-
 .avatar-group img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     border: 2px solid #ffffff;
-    margin-right: -10px; /* Effet de chevauchement */
+    margin-right: -10px;
     object-fit: cover;
 }
-
 .hero-bottom-left p {
     font-size: 12px;
     line-height: 1.5;
     color: #475569;
 }
 
-/* 4. Bas Droite : Mini Vidéo */
+/* Vidéo et Mode Plein Écran */
 .hero-video-box {
     position: absolute;
     bottom: 40px;
@@ -223,17 +244,16 @@ header{
     height: 145px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .hero-video-box video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* Bouton Play sur la vidéo */
 .video-play-btn {
     position: absolute;
     bottom: 15px;
@@ -246,11 +266,56 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    pointer-events: none;
 }
 
+.hero-video-box.fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+    border-radius: 0 !important;
+}
+.video-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+}
+.hero-video-box.fullscreen .video-close-btn {
+    display: flex;
+}
 
-/* Section 2 : Features / Collection */
+/* EFFET HOVER ULTRA-VISIBLE ET PROPRE SUR TOUTES LES CARDS */
+.features-card,
+.promo-card,
+.gallery-card {
+    cursor: pointer;
+    transition:
+        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.4s ease;
+}
+.features-card:hover,
+.promo-card:hover,
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Features Section */
 #features-section {
     position: relative;
     width: 100%;
@@ -261,22 +326,22 @@ header{
     align-items: center;
     overflow: hidden;
     padding: 80px 40px;
+    
 }
 
-/* Gros texte noir en arrière-plan */
 .bg-text-features {
     position: absolute;
+    left: 10%;
     font-size: 14vw;
     font-weight: 900;
     color: rgba(15, 23, 42, 0.04);
     letter-spacing: 2vw;
     white-space: nowrap;
-    z-index: 1;
     pointer-events: none;
     user-select: none;
+    z-index: 2;
 }
 
-/* Container des 3 colonnes */
 .features-container {
     position: relative;
     display: flex;
@@ -285,96 +350,74 @@ header{
     width: 100%;
     max-width: 1200px;
     height: 600px;
-    z-index: 2;
 }
 
-/* Style de base des colonnes */
 .features-col {
     display: flex;
     flex-direction: column;
     width: 28%;
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
-
 .col-left {
     justify-content: flex-start;
     gap: 40px;
 }
-
 .col-mid {
     width: 38%;
     justify-content: center;
+    z-index: 3
 }
-
 .col-right {
     justify-content: flex-end;
     gap: 40px;
 }
 
-/* Style commun des cartes */
 .features-card {
     width: 100%;
     background-color: #22252a;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
-
-.features-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Tailles différentes */
 .card-small {
     height: 320px;
 }
-
 .card-large {
     height: 540px;
     position: relative;
 }
 
-/* L'effet de découpage (Lignes horizontales) */
 .effect-stripes::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 16px,
-        #f8fafc 16px,
-        #f8fafc 26px
-    );
+    background: repeating-linear-gradient(to bottom, transparent, transparent 16px, #f8fafc 16px, #f8fafc 26px);
     pointer-events: none;
 }
 
-/* Textes secondaires */
 .features-text {
     font-size: 13px;
     line-height: 1.6;
     color: #64748b;
     max-width: 240px;
 }
-
 .col-right .features-text {
     align-self: flex-start;
 }
 
+/* Promo Section */
 .promo-section {
     width: 100%;
     padding: 100px 40px;
-    background-color: #f3f4f6; /* Fond neutre */
+    background-color: #f3f4f6;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .promo-header {
     width: 100%;
     max-width: 1200px;
@@ -384,7 +427,6 @@ header{
     margin-bottom: 40px;
     gap: 40px;
 }
-
 .promo-header h2 {
     font-size: 38px;
     font-weight: 800;
@@ -392,7 +434,6 @@ header{
     color: #111827;
     letter-spacing: -0.5px;
 }
-
 .promo-subtitle {
     font-size: 13px;
     line-height: 1.6;
@@ -407,29 +448,20 @@ header{
     width: 100%;
     max-width: 1200px;
 }
-
 .promo-card {
     position: relative;
     width: 50%;
     height: 600px;
     border-radius: 32px;
     overflow: hidden;
-    background-color: #2e3238; /* Couleur temporaire */
+    background-color: #2e3238;
 }
-
-.promo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .promo-card-content {
     position: absolute;
     bottom: 50px;
     left: 50px;
     z-index: 2;
 }
-
 .promo-card-content h3 {
     color: #ffffff;
     font-size: 36px;
@@ -439,10 +471,13 @@ header{
     opacity: 0.9;
 }
 
+/* ==========================================================================
+   GALLERY SECTION (Version Moderne & Premium)
+   ========================================================================== */
 .gallery-section {
     width: 100%;
-    padding: 80px 40px;
-    background-color: #f3f4f6;
+    padding: 120px 40px;
+    background-color: #f8fafc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,108 +489,139 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     position: relative;
 }
 
 .gallery-header h2 {
-    font-size: 32px;
+    font-family: "Syne", sans-serif;
+    font-size: 40px;
     font-weight: 800;
     line-height: 1.1;
     text-align: center;
     flex-grow: 1;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
+    color: #0f172a;
 }
 
-.gallery-tag-left, .gallery-tag-right {
+.gallery-tag-left,
+.gallery-tag-right {
     font-size: 11px;
     font-weight: 700;
-    color: #6b7280;
-    letter-spacing: 0.5px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     position: absolute;
 }
+.gallery-tag-left {
+    left: 0;
+}
+.gallery-tag-right {
+    right: 0;
+}
 
-.gallery-tag-left { left: 0; }
-.gallery-tag-right { right: 0; }
-
-/* Grille sur 4 colonnes */
+/* Grid épurée */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 32px;
     width: 100%;
     max-width: 1200px;
 }
 
+/* Card minimaliste sans fond lourd */
 .gallery-card {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    cursor: pointer;
 }
 
-/* Conteneur de l'image */
+/* Container d'image avec effet Zoom fluide */
 .gallery-img-box {
     position: relative;
     width: 100%;
-    height: 360px;
-    background-color: #1c1e22; /* Fond sombre */
-    border-radius: 20px;
+    height: 400px;
+    background-color: #1e2229;
+    border-radius: 16px;
     overflow: hidden;
 }
 
+/* Style de l'image par défaut */
 .gallery-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1);
 }
 
-/* Petite pastille transparente en haut à droite */
+/* Au survol de la carte, seule l'image à l'intérieur zoome */
+.gallery-card:hover .gallery-img-box img {
+    transform: scale(1.08);
+}
+
+/* Badge discret en transparence */
 .card-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    padding: 6px 12px;
-    border-radius: 30px;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
-    gap: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 4px;
 }
-
 .card-badge span {
     color: #ffffff;
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.badge-icon {
-    color: #ffffff;
     font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.badge-icon {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
 }
 
-/* Barre blanche du bas */
+/* Infos sous l'image : propre et intégrées au layout */
 .gallery-info-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(4px);
-    padding: 12px 16px;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    padding: 4px 0 0 0 !important;
 }
 
 .gallery-info-bar span {
-    font-size: 12px;
-    font-weight: 700;
-    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.1px;
 }
 
-.arrow-btn {
+/* Flèche animée au survol */
+.arrow-btn,
+.arrow-icon {
     display: flex;
     align-items: center;
-    color: #4b5563;
-    cursor: pointer;
+    color: #0f172a;
+    font-size: 18px;
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.gallery-card:hover .arrow-btn,
+.gallery-card:hover .arrow-icon {
+    transform: translateX(6px);
+}
+
+/* Désactivation des anciens effets de survol globaux pour cette section */
+.gallery-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
 }

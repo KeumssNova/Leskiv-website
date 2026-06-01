@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leskiv - Website</title>
+  <title>Leskiv - L'Art de l'Esquive</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <header class="navbar">
     <div class="nav-section nav-left">
-      <a href="#">PRODUIT</a>
+      <a href="#">PRODUITS</a>
       <a href="#"></a>
     </div>
-  
+
     <div class="nav-logo">
       <h1>LESKIV</h1>
     </div>
-  
+
     <div class="nav-section nav-right">
-      <a href="#">A PROPOS</a>
+      <a href="#">À PROPOS</a>
       <a href="#">CONTACT</a>
       <button class="btn-sign">CONNEXION</button>
       <div class="icon-cart">🛒</div>
@@ -29,29 +32,35 @@
   <main>
     <section id="hero">
       <div class="hero-content">
-        <h2>L'ART D'ESQUIVER<br>L'ORDINAIRE</h2>
+        <h2>
+          <div style="overflow: hidden;"><span class="hero-reveal-text" style="display: inline-block;">L'ART</span></div>
+          <div style="overflow: hidden;"><span class="hero-reveal-text" style="display: inline-block;">D'ESQUIVER L'ORDINAIRE</span></div>
+        </h2>
         <div class="hero-buttons">
           <button class="btn-shop">ACHETEZ MAINTENANT</button>
           <button class="btn-explore">EXPLORER</button>
         </div>
       </div>
-    
-      <img src="./images/boxeur-no-bg.png" alt="Mannequin" class="hero-main-img">
-    
+
+      <div class="hero-img-container">
+        <img src="./images/boxeur-no-bg.png" class="hero-main-img" alt="Mannequin">
+      </div>
+
       <div class="hero-bottom-left">
         <div class="avatar-group">
           <img src="./images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg" alt="user">
           <img src="./images/diego-hernandez-MSepzbKFz10-unsplash.jpg" alt="user">
           <img src="./images/jake-nackos-IF9TK5Uy-KI-unsplash.jpg" alt="user">
         </div>
-        <p>Rejoignez la communauté et découvrez nos dernières nouveautés exclusives.</p>
+        <p class="anim-fade-up">Rejoignez le club et accédez à nos pièces techniques en édition ultra-limitée.</p>
       </div>
-    
-      <div class="hero-video-box">
-        <video src="./Video/SONY FX3  Cinematic Boxing Video.mp4" autoplay loop muted playsinline></video>
+
+      <div class="hero-video-box" id="heroVideoContainer">
+        <button class="video-close-btn" id="closeVideoBtn">×</button>
+        <video id="heroVideo" src="./Video/SONY FX3 Cinematic Boxing Video.mp4" autoplay loop muted playsinline></video>
         <div class="video-play-btn">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-            <path d="M8 5v14l11-7z"/>
+            <path d="M7 14H5v-4h2l5-5v14zm8.5-4c0-.69-.31-1.31-.8-1.72v3.44c.49-.41.8-1.03.8-1.72z"/>
           </svg>
         </div>
       </div>
@@ -59,106 +68,208 @@
 
     <section id="features-section">
       <div class="bg-text-features">COLLECTION</div>
-    
+
       <div class="features-container">
-        
         <div class="features-col col-left">
-          <div class="features-card card-small">
-            </div>
-          <p class="features-text text-muted">
-            Performance driven gear for extreme conditions. Built for summer heat and winter cold.
+          <a href="#" class="features-card card-small"></a>
+          <p class="features-text text-muted anim-fade-up">
+            Armures modernes conçues pour le mouvement et l'esquive. Pensées pour endurer l'effort et braver les éléments.
           </p>
         </div>
-    
+
         <div class="features-col col-mid">
-          <div class="features-card card-large effect-stripes">
-            </div>
+          <a href="#" class="features-card card-large effect-stripes"></a>
         </div>
-    
+
         <div class="features-col col-right">
-          <p class="features-text text-muted">
-            Stay warm, stay fit. Our winter workout gear blends insulation with flexibility to keep you going.
+          <p class="features-text text-muted anim-fade-up">
+            Dominez le ring et la rue. Nos pièces fusionnent isolation technique et flexibilité absolue pour ne jamais freiner vos ambitions.
           </p>
-          <div class="features-card card-small">
-            </div>
+          <a href="#" class="features-card card-small"></a>
         </div>
-    
       </div>
     </section>
 
     <section class="promo-section">
       <div class="promo-header">
-        <h2>TOP WORKOUT GEAR FOR<br>PEAK PERFORMANCE!</h2>
-        <p class="promo-subtitle">Stay warm, stay fit. Our winter workout gear blends insulation with flexibility to keep you going in the toughest conditions.</p>
+        <h2 class="anim-fade-up">DES CAPSULES TECHNIQUES<br>POUR S'AFFRANCHIR DES LIMITES</h2>
+        <p class="promo-subtitle anim-fade-up">Chaque fil, chaque coupe est étudiée pour offrir une liberté totale. Maîtrisez vos mouvements, imposez votre style.</p>
       </div>
-    
+
       <div class="promo-grid">
-        <div class="promo-card">
+        <a href="#" class="promo-card">
           <div class="promo-card-content">
-            <h3>TOP<br>WORKOUT<br>GEAR FOR<br>PEAK<br>PERFORMANCE<br>NICE!</h3>
+            <h3>CONÇU<br>POUR L'EXCELLENCE<br>ET LE RING</h3>
           </div>
-        </div>
-        
-        <div class="promo-card">
+        </a>
+
+        <a href="#" class="promo-card">
           <div class="promo-card-content">
-            <h3>LATEST<br>STYLES AND<br>INNOVATIONS<br>IN WORKOUT<br>GEAR.</h3>
+            <h3>INNOVATIONS<br>MATIÈRES<br>& SPORTSWEAR<br>PREMIUM</h3>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section class="gallery-section">
       <div class="gallery-header">
-        <span class="gallery-tag-left">NEW ARRIVAL</span>
-        <h2>FRESH FITS FOR YOUR<br>NEXT WORKOUT!</h2>
-        <span class="gallery-tag-right">ALL BRANDS</span>
+        <span class="gallery-tag-left">NOUVELLE SÉRIE</span>
+        <h2 class="anim-fade-up">ÉQUIPEZ VOTRE PROCHAIN<br>COMBAT</h2>
+        <span class="gallery-tag-right">EXCLUSIVITÉS</span>
       </div>
-    
+
       <div class="gallery-grid">
-        <div class="gallery-card">
+        <a href="#" class="gallery-card">
           <div class="gallery-img-box">
-            <div class="card-badge">
-              <span>Glass</span>
-              <div class="badge-icon">↗</div>
-            </div>
+            <img src="images/product-test.jpg" alt="Veste Polaire">
+            <div class="card-badge"><span>Série Noir</span><div class="badge-icon">↗</div></div>
           </div>
           <div class="gallery-info-bar">
-            <span>Affit Fleece Jacket</span>
-            <div class="arrow-btn">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
+            <span>Veste Polaire Affit</span>
+            <div class="arrow-btn">→</div>
           </div>
-        </div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Sticker</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Affit Cotton Hoodie</span><div class="arrow-btn">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Glass</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Affit Cargo Pants</span><div class="arrow-icon">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Mirror</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Active Base Layer</span><div class="arrow-icon">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Glass</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Thermal Running Set</span><div class="arrow-icon">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Sticker</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Desert Track Jacket</span><div class="arrow-icon">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Glass</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Oversized Tee Black</span><div class="arrow-icon">→</div></div></div>
-        <div class="gallery-card"><div class="gallery-img-box"><div class="card-badge"><span>Mirror</span><div class="badge-icon">↗</div></div></div><div class="gallery-info-bar"><span>Windbreaker Vest V2</span><div class="arrow-icon">→</div></div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <img src="images/product-test.jpg" alt="Veste Polaire">
+            <div class="card-badge"><span>Édition</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Hoodie Molleton Coton</span><div class="arrow-btn">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Série Noir</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Pantalon Cargo Technique</span><div class="arrow-icon">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Premium</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Sous-Couche Athlétique</span><div class="arrow-icon">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Thermique</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Ensemble de Course Tech</span><div class="arrow-icon">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Édition</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Coupe-Vent Desert Track</span><div class="arrow-icon">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Série Noir</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>T-Shirt Oversize Brut</span><div class="arrow-icon">→</div></div>
+        </a>
+
+        <a href="#" class="gallery-card">
+          <div class="gallery-img-box">
+            <div class="card-badge"><span>Premium</span><div class="badge-icon">↗</div></div>
+          </div>
+          <div class="gallery-info-bar"><span>Gilet Sans Manche V2</span><div class="arrow-icon">→</div></div>
+        </a>
       </div>
     </section>
-
-
   </main>
 
-  <footer>
+  <footer></footer>
 
-  </footer>
   <svg width="0" height="0" style="position: absolute;">
     <defs>
       <clipPath id="smooth-trapezoid" clipPathUnits="objectBoundingBox">
-        <path d="M 0,0 
-                 L 1,0 
-                 Q 0.98,0.05 0.86,0.92 
-                 Q 0.84,1 0.80,1 
-                 L 0.20,1 
-                 Q 0.16,1 0.14,0.92 
-                 Q 0.02,0.05 0,0 Z" />
+        <path d="M 0,0 L 1,0 Q 0.98,0.05 0.86,0.92 Q 0.84,1 0.80,1 L 0.20,1 Q 0.16,1 0.14,0.92 Q 0.02,0.05 0,0 Z" />
       </clipPath>
     </defs>
   </svg>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    // Synchronisation parfaite Lenis + GSAP ScrollTrigger
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- ANIMATION HERO ---
+    const tlHero = gsap.timeline({ defaults: { ease: "expo.out" } });
+
+    tlHero.from(".navbar", { yPercent: -100, duration: 1 })
+      .from(".hero-reveal-text", { yPercent: 100, duration: 1.2, stagger: 0.1 }, "-=0.6")
+      .from(".hero-buttons", { opacity: 0, y: 20, duration: 0.8 }, "-=0.8")
+      .from(".hero-main-img", { y: 60, scale: 1.1, opacity: 0, duration: 1.8 }, "-=1.2");
+
+    // --- ANIMATIONS TEXTES AU SCROLL ---
+    gsap.utils.toArray(".anim-fade-up").forEach(text => {
+      gsap.from(text, {
+        scrollTrigger: {
+          trigger: text,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        ease: "power4.out"
+      });
+    });
+
+    // --- PARALLAXE "COLLECTION" ---
+    gsap.to(".bg-text-features", {
+      scrollTrigger: { trigger: "#features-section", start: "top bottom", end: "bottom top", scrub: 1 },
+      x: -150
+    });
+
+    // --- APPARITION FEATURES ---
+    gsap.from(".features-card", {
+      scrollTrigger: { trigger: ".features-container", start: "top 80%" },
+      opacity: 0, y: 60, stagger: 0.1, duration: 1.2, ease: "expo.out"
+    });
+
+    // --- PROMO SECTION ---
+    gsap.from(".promo-card", {
+      scrollTrigger: { trigger: ".promo-grid", start: "top 85%" },
+      opacity: 0, y: 80, stagger: 0.15, duration: 1.4, ease: "expo.out"
+    });
+
+    // --- GALLERY SECTION ---
+    gsap.from(".gallery-card", {
+      scrollTrigger: { trigger: ".gallery-grid", start: "top 85%" },
+      opacity: 0, y: 50, stagger: 0.05, duration: 1.2, ease: "power4.out"
+    });
+
+    // --- LOGIQUE VIDÉO ---
+    const videoContainer = document.getElementById("heroVideoContainer");
+    const videoElement = document.getElementById("heroVideo");
+    const closeBtn = document.getElementById("closeVideoBtn");
+
+    videoContainer.addEventListener("click", function(e) {
+      if (e.target !== closeBtn) {
+        videoContainer.classList.add("fullscreen");
+        videoElement.muted = false;
+      }
+    });
+
+    closeBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      videoContainer.classList.remove("fullscreen");
+      videoElement.muted = true;
+    });
+  </script>
+
 </body>
 </html>
