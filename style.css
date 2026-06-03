@@ -4,19 +4,22 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Mirano";
+    src: url("Fonts/MiranoExtendedFreebie-Light.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     padding: 20px;
     background: #f8fafc;
-    font-family: "Poppins", sans-serif;
-<<<<<<< HEAD
+    font-family: "Roboto", sans-serif;
     overflow-x: hidden;
-=======
-    
 }
 
 Main {
     overflow: hidden;
->>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 }
 
 /* Header & Navbar */
@@ -97,6 +100,7 @@ header {
 }
 
 .nav-logo h1 {
+    font-family: "Mirano", sans-serif;
     margin: 0;
     font-size: 24px;
     letter-spacing: 3px;
@@ -178,6 +182,12 @@ header {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.hero-reveal-text {
+    font-family: "Mirano", sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
 }
 
 .btn-shop {
@@ -334,17 +344,14 @@ header {
     align-items: center;
     overflow: hidden;
     padding: 80px 40px;
-    
 }
 
 .bg-text-features {
     position: absolute;
-<<<<<<< HEAD
-    left: 10%;
+    left: 15%;
     font-size: 14vw;
-=======
+
     font-size: 10vw;
->>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
     font-weight: 900;
     color: rgba(127, 131, 139, 0.398);
     letter-spacing: 2vw;
@@ -362,11 +369,6 @@ header {
     width: 100%;
     max-width: 1200px;
     height: 600px;
-<<<<<<< HEAD
-=======
-    gap: 40px;
-    
->>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 }
 
 .features-col {
@@ -385,11 +387,7 @@ header {
 .col-mid {
     width: 34%;
     justify-content: center;
-<<<<<<< HEAD
-    z-index: 3
-=======
-    z-index: 2;
->>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
+    z-index: 3;
 }
 .col-right {
     z-index: 0;
@@ -450,11 +448,10 @@ header {
     gap: 40px;
 }
 .promo-header h2 {
-    font-size: 38px;
+    font-size: 3rem;
     font-weight: 800;
     line-height: 1.1;
     color: #111827;
-    letter-spacing: -0.5px;
 }
 .promo-subtitle {
     font-size: 13px;
@@ -484,16 +481,17 @@ header {
     left: 50px;
     z-index: 2;
 }
-<<<<<<< HEAD
-=======
 
-.c-1{
+.c-1 {
     top: 90px;
 }
 
->>>>>>> 1ee4aa17bedd4db580e59b9181ced4170ef3e69f
 .promo-card-content h3 {
-    color: #ffffff;
+    background: linear-gradient(rgb(84, 124, 138) 0%, rgb(255, 255, 255) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     font-size: 36px;
     font-weight: 700;
     line-height: 1.1;
@@ -525,8 +523,8 @@ header {
 }
 
 .gallery-header h2 {
-    font-family: "Syne", sans-serif;
-    font-size: 40px;
+    font-family: "Mirano", sans-serif;
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1.1;
     text-align: center;
@@ -634,6 +632,27 @@ header {
     font-weight: 600;
     color: #0f172a;
     letter-spacing: -0.1px;
+}
+
+.gallery-btns {
+    padding-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.gallery-btn-explore {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-btn-explore:hover {
+    transform: scale(1.05);
 }
 
 /* Flèche animée au survol */
